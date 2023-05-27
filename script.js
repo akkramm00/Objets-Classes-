@@ -29,3 +29,47 @@
 
  let personne2 = new Humain()
  console.log(personne2)
+//  Instanciation un nouvel objet et affichons les propriétés de celui-ci.
+
+let personne = new Personne('Doe', 'John', 31, 'M', 'Rue du JavaScript')
+console.log(personne.nom, personne.prenom, personne.age, personne.sexe, personne.adresse)
+
+// Modifiez les valeurs de votre objet après l'avoir initialisé.
+// La nouvelle adresse sera "Rue des classes en JavaScript", tandis que l'âge vaudra désormais 41.
+
+personne.age = 41
+personne.adresse = 'Rue des classes en JavaScript'
+
+console.log(personne.nom, personne.prenom, personne.age, personne.sexe, personne.adresse)
+
+//===================================================================================================================================================
+
+//  À ce niveau, nos propriétés ne possèdent pas de valeurs.
+// Nous pouvons leur en attribuer une soit de manière statique à l'intérieur de la classe, soit en passant un paramètre à notre fonction constructeur.
+
+// Version ES5
+function Voiture(moteur, roues, carroserie) {
+    this.moteur = moteur
+    this.roues = roues
+    this.carroserie = carroserie
+    this.volant = 'sport'
+  }
+  
+  let voiture = new Voiture('1.6L', 4, 'Berline')
+
+  //======================== ES6 ==========================
+
+  // Version ES6
+class Voiture{
+    constructor(moteur, roues, carroserie) {
+      this.moteur = moteur
+      this.roues = roues
+      this.carroserie = carroserie
+      this.volant = 'sport'
+    }
+  }
+  
+  let Voiture = new Voiture('1.8L', 4, 'Break')
+
+//   Passer des paramètres à notre objet se fait lors de l'instanciation, de la même manière que nous passons des paramètres à une fonction classique.
+// Ils doivent être ensuite associés aux propriétés souhaitées à l'intérieur de la classe. 
